@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { darken } from "polished";
 
 export const Container = styled.div`
-  max-width: 600px;
+  max-width: 910px;
   margin: 50px auto;
 
   form {
@@ -39,18 +39,23 @@ export const Container = styled.div`
     }
 
     button {
-      margin: 5px 0 0;
+      display: flex;
+      justify-content: space-around;
+      padding: 0 10px 0;
       height: 44px;
-      background: #3b9eff;
+      width: 175px;
+      background: #a81656;
       font-weight: bold;
       color: #fff;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
+      margin-left: 735px;
+      margin-top: 20px;
 
       &:hover {
-        background: ${darken(0.03, "#3b9eff")};
+        background: ${darken(0.03, "#a81656")};
       }
     }
 
@@ -63,23 +68,6 @@ export const Container = styled.div`
       &:hover {
         opacity: 1;
       }
-    }
-  }
-
-  > button {
-    width: 100%;
-    margin: 10px 0 0;
-    height: 44px;
-    background: #f64c75;
-    font-weight: bold;
-    color: #fff;
-    border: 0;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background 0.2s;
-
-    &:hover {
-      background: ${darken(0.08, "#f64c75")};
     }
   }
 `;

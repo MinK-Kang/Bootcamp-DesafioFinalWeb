@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Input } from "@rocketseat/unform";
 
+import { MdAddCircleOutline } from "react-icons/md";
+
 import { updateProfileRequest } from "~/store/modules/user/actions";
 import { signOut } from "~/store/modules/auth/actions";
 
@@ -24,7 +26,6 @@ export default function Profile() {
   return (
     <Container>
       <Form initialData={profile} onSubmit={handleSubmit}>
-        <AvatarInput name="avatar_id" />
         <Input name="name" placeholder="Nome completo" />
         <Input name="email" type="email" placeholder="Seu endereço de e-mail" />
 
@@ -42,12 +43,11 @@ export default function Profile() {
           placeholder="Confirmação de senha"
         />
 
-        <button type="submit">Atualizar perfil</button>
+        <button type="submit">
+          <MdAddCircleOutline size={20} color="#fff" />
+          Salvar perfil
+        </button>
       </Form>
-
-      <button type="button" onClick={handleSignOut}>
-        Sair do GoBarber
-      </button>
     </Container>
   );
 }
