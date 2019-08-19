@@ -5,9 +5,6 @@ import { Form, Input } from "@rocketseat/unform";
 import { MdAddCircleOutline } from "react-icons/md";
 
 import { updateProfileRequest } from "~/store/modules/user/actions";
-import { signOut } from "~/store/modules/auth/actions";
-
-import AvatarInput from "./AvatarInput";
 
 import { Container } from "./styles";
 
@@ -17,10 +14,6 @@ export default function Profile() {
 
   function handleSubmit(data) {
     dispatch(updateProfileRequest(data));
-  }
-
-  function handleSignOut() {
-    dispatch(signOut());
   }
 
   return (
