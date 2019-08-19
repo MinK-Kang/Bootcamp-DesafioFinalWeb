@@ -1,10 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 import { darken } from "polished";
 
 export const Wrapper = styled.div`
   height: 100%;
-  background: linear-gradient(-90deg, #7159c1, #ab59c1);
+  background: #24022e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,7 +44,7 @@ export const Content = styled.div`
     button {
       margin: 5px 0 0;
       height: 44px;
-      background: #3b9eff;
+      background: #a81656;
       font-weight: bold;
       color: #fff;
       border: 0;
