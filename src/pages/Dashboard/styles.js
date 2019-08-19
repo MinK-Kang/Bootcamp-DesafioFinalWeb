@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import { darken } from "polished";
 
 export const Container = styled.div`
-  max-width: 600px;
+  max-width: 900px;
   margin: 50px auto;
 
   display: flex;
@@ -9,12 +10,25 @@ export const Container = styled.div`
 
   header {
     display: flex;
-    align-self: center;
-    align-items: center;
+    justify-content: space-between;
 
     button {
+      display: flex;
+      justify-content: space-around;
+      padding: 0 10px 0;
+      height: 44px;
+      width: 175px;
+      background: #a81656;
+      font-weight: bold;
+      color: #fff;
       border: 0;
-      background: none;
+      border-radius: 4px;
+      font-size: 16px;
+      transition: background 0.2s;
+
+      &:hover {
+        background: ${darken(0.03, "#a81656")};
+      }
     }
 
     strong {
@@ -25,30 +39,39 @@ export const Container = styled.div`
   }
 
   ul {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0 0;
   }
 `;
 
 export const Time = styled.li`
   padding: 20px;
   border-radius: 4px;
-  background: #fff;
+  background: #000;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
 
-  opacity: ${props => (props.past ? 0.6 : 1)};
+  opacity: ${props => (props.past ? 0.3 : 0.6)};
 
   strong {
     display: block;
-    color: ${props => (props.available ? "#999" : "#7159c1")};
-    font-size: 20px;
+    color: ${props => (props.available ? "#fff" : "#7159c1")};
+    font-size: 15px;
     font-weight: normal;
+    margin-left: 500px;
   }
 
   span {
     display: block;
+    font-weight: bold;
     margin-top: 3px;
-    color: ${props => (props.available ? "#999" : "#666")};
+    color: ${props => (props.available ? "#fff" : "#666")};
+  }
+
+  button {
+    background: transparent;
+    border: 0;
   }
 `;

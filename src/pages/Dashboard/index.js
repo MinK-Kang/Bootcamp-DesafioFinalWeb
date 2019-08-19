@@ -12,7 +12,7 @@ import {
 } from "date-fns";
 import { utcToZonedTime } from "date-fns-tz";
 import pt from "date-fns/locale/pt";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { MdAddCircleOutline, MdChevronRight } from "react-icons/md";
 import api from "~/services/api";
 
 import { Container, Time } from "./styles";
@@ -41,7 +41,7 @@ export default function Dashboard() {
         const compareDate = utcToZonedTime(checkDate, timezone);
 
         return {
-          time: `${hour}:00h`,
+          time: `${dateFormatted}, às ${hour}h`,
           past: isBefore(compareDate, new Date()),
           appointment: response.data.find(a =>
             isEqual(parseISO(a.date), compareDate)
@@ -53,35 +53,30 @@ export default function Dashboard() {
     }
 
     loadSchedule();
-  }, [date]);
+  }, [date, dateFormatted]);
 
-  function handlePrevDay() {
-    setDate(subDays(date, 1));
-  }
-
-  function handleNextDay() {
+  function handleNewMeetup() {
     setDate(addDays(date, 1));
   }
 
   return (
     <Container>
       <header>
-        <button type="button" onClick={handlePrevDay}>
-          <MdChevronLeft size={36} color="#fff" />
-        </button>
-        <strong>{dateFormatted}</strong>
-        <button type="button" onClick={handleNextDay}>
-          <MdChevronRight size={36} color="#fff" />
+        <strong>Meus meetups</strong>
+        <button type="button" onClick={handleNewMeetup}>
+          <MdAddCircleOutline size={20} color="#fff" />
+          Novo meetup
         </button>
       </header>
 
       <ul>
         {schedule.map(time => (
-          <Time key={time.time} past={time.past} available={!time.appointment}>
+          <Time key={time.time} past={false} available={!time.appointment}>
+            <span>Meetup de React Native</span>
             <strong>{time.time}</strong>
-            <span>
-              {time.appointment ? time.appointment.user.name : "Em aberto"}
-            </span>
+            <button type="button">
+              <MdChevronRight size={20} color="#fff" />
+            </button>
           </Time>
         ))}
       </ul>
