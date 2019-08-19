@@ -10,8 +10,8 @@ import Dashboard from "~/pages/Dashboard";
 export default function DefaultLayout({ children }) {
   return (
     <Wrapper>
-      <Header>{children}</Header>
-      <Profile />
+      <Header />
+      {children}
     </Wrapper>
   );
 }
