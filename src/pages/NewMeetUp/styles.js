@@ -16,7 +16,7 @@ export const Container = styled.div`
       background: rgba(0, 0, 0, 0.1);
       border: 0;
       border-radius: 4px;
-      height: ${props => (props.description ? "100px" : "44px")};
+      height: ${props => (props.name === "description" ? "200px" : "44px")};
       padding: 0 15px;
       color: #fff;
       margin: 0 0 10px;

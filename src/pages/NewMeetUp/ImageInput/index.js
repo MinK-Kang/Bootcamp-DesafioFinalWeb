@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useField } from "@rocketseat/unform";
+import { MdPhotoCamera } from "react-icons/md";
 import api from "~/services/api";
 
 import { Container } from "./styles";
@@ -38,12 +39,10 @@ export default function ImageInput() {
   return (
     <Container>
       <label htmlFor="avatar">
-        <img
-          src={
-            preview || "https://api.adorable.io/avatars/50/abott@adorable.png"
-          }
-          alt="Min"
-        />
+        <div>
+          <MdPhotoCamera size={50} color="#fff" />
+          <strong>Selecionar imagem</strong>
+        </div>
         <input
           type="file"
           id="avatar"

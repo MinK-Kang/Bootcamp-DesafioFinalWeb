@@ -11,12 +11,26 @@ export const Container = styled.div`
       opacity: 0.7;
     }
 
-    img {
-      height: auto;
+    div {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      height: 350px;
       width: auto;
       border-radius: 10px;
       border: 3px solid rgba(255, 255, 255, 0.3);
-      background: #eee;
+      background: #000;
+      opacity: 0.2;
+
+      &:hover {
+        opacity: 0.3;
+      }
+
+      strong {
+        color: #fff;
+        margin-top: 20px;
+      }
     }
 
     input {

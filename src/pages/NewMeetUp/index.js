@@ -26,11 +26,7 @@ export default function NewMeetUp() {
 
       <Form schema={schema} onSubmit={handleSubmit}>
         <Input name="title" placeholder="Título do Meetup" />
-        <Input
-          name="description"
-          placeholder="Descrição completa"
-          description
-        />
+        <Input name="description" placeholder="Descrição completa" />
         <Input name="data" placeholder="Data do Meetup" />
         <Input name="local" placeholder="Localização" />
 
