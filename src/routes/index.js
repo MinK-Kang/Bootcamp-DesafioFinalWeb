@@ -8,6 +8,8 @@ import SignUp from "../pages/SignUp";
 import Dashboard from "../pages/Dashboard";
 import Profile from "../pages/Profile";
 
+import NewMeetUp from "../pages/NewMeetUp";
+
 export default function Routes() {
   return (
     <Switch>
@@ -16,6 +18,8 @@ export default function Routes() {
 
       <Route path="/dashboard" component={Dashboard} isPrivate />
       <Route path="/profile" component={Profile} isPrivate />
+
+      <Route path="/newMeetUp" component={NewMeetUp} isPrivate />
 
       {/* <Route path="/" component={() => <h1>404</h1>} /> */}
     </Switch>

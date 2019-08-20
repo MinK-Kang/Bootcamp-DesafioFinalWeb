@@ -1,8 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   format,
-  subDays,
-  addDays,
   setHours,
   setMinutes,
   setSeconds,
@@ -55,18 +54,18 @@ export default function Dashboard() {
     loadSchedule();
   }, [date, dateFormatted]);
 
-  function handleNewMeetup() {
-    setDate(addDays(date, 1));
-  }
+  function handleNewMeetup() {}
 
   return (
     <Container>
       <header>
         <strong>Meus meetups</strong>
-        <button type="button" onClick={handleNewMeetup}>
-          <MdAddCircleOutline size={20} color="#fff" />
-          Novo meetup
-        </button>
+        <Link to="/newMeetUp">
+          <button type="button" onClick={handleNewMeetup}>
+            <MdAddCircleOutline size={20} color="#fff" />
+            Novo meetup
+          </button>
+        </Link>
       </header>
 
       <ul>
