@@ -1,12 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 import { Form, Input } from "@rocketseat/unform";
 import { MdAddCircleOutline } from "react-icons/md";
 import * as Yup from "yup";
 
 import ImageInput from "~/pages/NewMeetUp/ImageInput/index";
 import { Container } from "~/pages/NewMeetUp/styles";
+import { createMeetUpRequest } from "~/store/modules/meetup/actions";
 
 const schema = Yup.object().shape({
   title: Yup.string().required("O título é obrigatório"),
@@ -18,7 +18,9 @@ const schema = Yup.object().shape({
 export default function NewMeetUp() {
   const dispatch = useDispatch();
 
-  function handleSubmit({ title, description, data, local }) {}
+  function handleSubmit({ data }) {
+    dispatch(createMeetUpRequest(data));
+  }
 
   return (
     <Container>
